@@ -1,12 +1,9 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+import HeaderComponent from "./components/HeaderComponent";
 
 require('./bootstrap');
 
 window.Vue = require('vue').default;
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -23,6 +20,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 // @r added
 Vue.component('sample-component', require('./components/SampleComponent.vue').default);
+// Vue.component('header-component', require('./components/HeaderComponent.vue').default);
+Vue.component('header-component', HeaderComponent);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
