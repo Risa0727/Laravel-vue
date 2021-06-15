@@ -1,10 +1,23 @@
+import VueRouter from 'vue-router';
 import HeaderComponent from "./components/HeaderComponent";
+import TaskListComponent from "./components/TaskListComponent";
 
 require('./bootstrap');
 
 window.Vue = require('vue').default;
 
+Vue.use(VueRouter);
 
+const router = new VueRouter({
+  mode: 'history',
+  routes: [
+    {
+      path: './tasks',
+      name: 'task.list',
+      component: TaskListComponent
+    },
+  ]
+});
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -31,4 +44,5 @@ Vue.component('header-component', HeaderComponent);
 
 const app = new Vue({
     el: '#app',
+    router
 });
