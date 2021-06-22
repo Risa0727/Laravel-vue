@@ -38598,7 +38598,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "form-group row" }, [
       _c(
         "label",
-        { staticClass: "colsm-3 col-form-label", attrs: { for: "title" } },
+        { staticClass: "col-sm-3 col-form-label", attrs: { for: "title" } },
         [_vm._v("Title")]
       ),
       _vm._v(" "),
