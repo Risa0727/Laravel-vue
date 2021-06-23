@@ -47,7 +47,7 @@
         });
       },
       submit() {
-        axios.put('/api/tasks/' + this.taskId, this.task)
+        axios.put('/00/laravel-vue/api/tasks/' + this.taskId, this.task)
           .then((res) => {
             this.$router.push({name: 'task.list'})
           });

@@ -29,9 +29,7 @@
             </router-link>
           </td>
           <td>
-            <router-link v-bind:to="{name: 'task.delete', params: {taskId: task.id }}">
-              <button class="btn btn-danger">Delete</button>
-            </router-link>
+            <button class="btn btn-danger" v-on:click="deleteTask(task.id)">Delete</button>
           </td>
         </tr>
       </tbody>
@@ -52,6 +50,12 @@
           .then((res) => {
             this.tasks = res.data;
           });
+      },
+      deleteTask(id) {
+        axios.delete('api/tasks/' + id)
+          .then((res) => {
+            this.getTasks();
+          })
       }
     },
       mounted() {

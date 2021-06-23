@@ -2075,7 +2075,7 @@ __webpack_require__.r(__webpack_exports__);
     submit: function submit() {
       var _this2 = this;
 
-      axios.put('/api/tasks/' + this.taskId, this.task).then(function (res) {
+      axios.put('/00/laravel-vue/api/tasks/' + this.taskId, this.task).then(function (res) {
         _this2.$router.push({
           name: 'task.list'
         });
@@ -2139,8 +2139,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2153,6 +2151,13 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get('api/tasks').then(function (res) {
         _this.tasks = res.data;
+      });
+    },
+    deleteTask: function deleteTask(id) {
+      var _this2 = this;
+
+      axios["delete"]('api/tasks/' + id).then(function (res) {
+        _this2.getTasks();
       });
     }
   },
@@ -38887,25 +38892,20 @@ var render = function() {
               1
             ),
             _vm._v(" "),
-            _c(
-              "td",
-              [
-                _c(
-                  "router-link",
-                  {
-                    attrs: {
-                      to: { name: "task.delete", params: { taskId: task.id } }
+            _c("td", [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-danger",
+                  on: {
+                    click: function($event) {
+                      return _vm.deleteTask(task.id)
                     }
-                  },
-                  [
-                    _c("button", { staticClass: "btn btn-danger" }, [
-                      _vm._v("Delete")
-                    ])
-                  ]
-                )
-              ],
-              1
-            )
+                  }
+                },
+                [_vm._v("Delete")]
+              )
+            ])
           ])
         }),
         0
