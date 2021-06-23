@@ -17,4 +17,8 @@ class TaskController extends Controller
     // ※これでLaravelが勝手にjson形式のレスポンスを返却します
     return $task;
   }
+
+  public function store(Request $request) {
+    return Task::create($request->all());
+  }
 }
