@@ -12,6 +12,7 @@ window.Vue = require('vue').default;
 Vue.use(VueRouter);
 
 const router = new VueRouter({
+  base: '/00/laravel-vue',
   mode: 'history',
   routes: [
     {
